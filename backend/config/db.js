@@ -1,22 +1,25 @@
 const sql = require('mssql');
+require('dotenv').config();
+
 const config = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER,
-    database: process.env.DB_DATABASE,
-    port: parseInt(process.env.DB_PORT, 10),
+    user: process.env.DB_USER || 'td',
+    password: process.env.DB_PASS || '123',
+    server: process.env.DB_SERVER || 'localhost',
+    database: process.env.DB_NAME || 'HCSDL',
     options: {
-        encrypt: false, // Đặt true nếu sử dụng Azure
+        encrypt: true,
         trustServerCertificate: true,
     },
 };
 
-const poolPromise = new sql.ConnectionPool(config)
-    .connect()
-    .then((pool) => {
-        console.log('Connected to SQL Server');
-        return pool;
+sql.connect(config)
+    .then(pool => {
+        console.log('Kết nối SQL Server thành công');
+        return pool.request().query('SELECT * FROM Employee');
     })
-    .catch((err) => console.log('Database Connection Failed!', err));
-
-module.exports = { sql, poolPromise };
+    .then(result => {
+        console.log(result.recordset);
+    })
+    .catch(err => {
+        console.error('Lỗi kết nối:', err);
+    });
