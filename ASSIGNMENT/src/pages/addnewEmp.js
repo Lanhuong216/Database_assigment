@@ -72,7 +72,7 @@ function AddNewEmp() {
                     <h3>Hợp đồng làm việc</h3>
                     <input type="file" id="contract"></input>
                 </div>
-                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listcus`)}></input>
+                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listemp`)}></input>
             </form>
         </>
     )
