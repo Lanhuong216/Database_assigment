@@ -25,21 +25,21 @@ function Navbar() {
                     <li className={styles.menu_item}>
                         Sản phẩm
                         <ul className={styles.submenu}>
-                            <li>Danh sách sản phẩm</li>
-                            <li>Nhà cung cấp sản phẩm</li>
-                            <li>Quản lý kho</li>
+                            <li onClick={() => navigate(`/listproduct`)}>Danh sách sản phẩm</li>
+                            <li onClick={() => navigate(`/supplier`)}>Nhà cung cấp sản phẩm</li>
+                            <li onClick={() => navigate(`/inventory`)}>Quản lý kho</li>
                         </ul>
                     </li>
-                    <li className={styles.menu_item}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/listempl`)}>
                         Khách hàng
                     </li>
-                    <li className={styles.menu_item}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/listcus`)}>
                         Nhân viên
                     </li>
-                    <li className={styles.menu_item}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/marketing`)}>
                         Tiếp thị
                     </li>
-                    <li className={styles.menu_item}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/report`)}>
                         Báo cáo
                     </li>
                 </ul>
