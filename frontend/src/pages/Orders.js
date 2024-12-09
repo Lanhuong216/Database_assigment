@@ -2,10 +2,9 @@ import React from 'react';
 import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/Orders.module.scss'
 import orderApi from '../api/orderApi';
-import { useState, useEffect, useNavigate } from 'react';
+import { useState, useEffect } from 'react';
 const Orders = () => {
   const [orderList, setOrderList] = useState([])
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchOrd = async () => {
       const emp = await orderApi.getAll();
@@ -13,9 +12,6 @@ const Orders = () => {
     }
     fetchOrd();
   }, [])
-  const handleRowClick = (orderId) => {
-    navigate(`/orders/${orderId}`);
-  };
   return (
     <>
       <Navbar />
@@ -33,9 +29,7 @@ const Orders = () => {
         <tbody>
           {orderList.map((data) => {
             return (
-              <tr key={data.order_id}
-                onClick={() => handleRowClick(data.order_id)}
-                style={{ cursor: "pointer" }}>
+              <tr>
                 <td>{data.order_id}</td>
                 <td>{data.create_date}</td>
                 <td>{data.name}</td>
@@ -50,4 +44,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default Orders; 
