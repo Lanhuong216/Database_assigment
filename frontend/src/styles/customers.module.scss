@@ -30,6 +30,7 @@
 
     tr:hover {
         background-color: #fff2e3;
+        cursor: pointer;
     }
 
     th {
@@ -40,6 +41,7 @@
         color: white;
         font-size: 20px;
     }
+
     input {
         width: 50px;
         text-align: center;
@@ -48,10 +50,12 @@
 
 .add {
     margin-left: 20px;
+
     &:hover {
         background-color: #a68174;
     }
 }
+
 .btn {
     display: flex;
     align-items: center;
@@ -63,6 +67,7 @@
     font-family: "Josefin Sans";
     width: 150px;
     height: 40px;
+
     &:hover {
         background-color: #a67969;
     }
