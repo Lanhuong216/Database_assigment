@@ -1,0 +1,245 @@
+.content {
+    margin-top: 107px;
+    margin-left: 350px;
+    font-family: 'Josefin Sans';
+    background-color: #ffffff;
+    display: flex;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-family: 'Josefin Sans';
+    color: #60443A;
+  }
+  
+  .form-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Supply-detail {
+    background-color: #FFF2E3;
+    width: 703px;
+    height: 295px;
+}
+  
+  .form-group label {
+    display: block;
+    margin: 5px 25px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .form-group input, 
+  .form-group textarea {
+    margin-left: 25px;
+    width: 627px;
+    padding: 10px;
+    border: 2px solid #000000;
+    background-color: #FFF2E3;
+    font-size: 15px;
+    font-family: 'Josefin Sans';
+    color: #000000;
+    font-weight: lighter;
+  }
+  
+  textarea {
+    height: 140px;
+  }
+  
+  .Note label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .Note {
+    background-color: #FFF2E3;
+    width: 301px;
+    height: 102px;
+  
+  p {
+    padding: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  textarea {
+    margin: -5px 10px;
+    width: 275px;
+    height: 45px;
+    font-size: 15px;
+    border: none;
+    background-color: #FFF2E3;
+  }
+  
+  label {
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+  }
+  
+.classify {
+    background-color: #FFF2E3;
+    width: 703px;
+    height: 175px;
+
+label {
+    padding: 10px;
+    margin: 0 15px;
+    display: block;
+    font-weight: bold;
+    color:#000000;
+    font-size: 15px;
+}
+}
+
+.classification-options{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color:#000000;
+    font-size: 15px;
+    font-weight: lighter;
+}
+}
+
+.above {
+    margin-left: 27%;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.form-group2,
+.form-group3 {
+    margin-right: 45%;
+    display: grid;
+    grid-template-columns: auto auto;
+
+label {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #000000;
+}
+
+button {
+    margin-top: 8px;
+    background-color: #FFF2E3;
+    /* width: 70px; */
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+}
+
+
+  .create-table {
+    margin: 20px 0px;
+    background-color: #FFF2E3;
+    width: 703px;
+    height: 225px;
+
+    label {
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 25px;
+      }
+  
+  img {
+    margin-top: -2px;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .version {
+    margin-left: 450px;
+    padding: 10px;
+    background-color: #FFF2E3;
+    border: none;
+    text-align: left;
+    color: #1919e8;
+    cursor: pointer;
+  }
+  
+  .remove-btn {
+    background-color: #FFF2E3;
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    text-align: left;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+  
+  table th {
+    background-color: #FFF2E3;
+  }
+  }
+
+  .remove-btn {
+    background-color: #FFF2E3;
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
+  
+  .save button {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-right: 60px;
+      padding: 2px 30px;
+      border: 3px solid $hover-color;
+      cursor: pointer;
+      color: #60443A;
+      font-family: 'Josefin Sans';
+      font-weight: 400px;
+      font-size: 20px;
+      position: absolute;
+      top: 20%;
+      right: 1%;
+  
+      &:hover {
+          background-color: darken($hover-color, 10%);
+          color: #fff;
+      }
+  }
+  
+  .cancel button {
+    justify-self: flex-end;
+    padding: 10px ;
+    background-color: #e74c3c;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+  
+    &:hover {
+        background-color: #b33c2f;
+    }
+  }
+  
