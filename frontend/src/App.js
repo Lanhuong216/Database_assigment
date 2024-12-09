@@ -1,4 +1,3 @@
-import Navbar from './components/NavigationBar/Navbar'
 import CusInfo from "./pages/cusInfo";
 import EmpInfo from "./pages/empInfo";
 import AddNewCus from "./pages/addnewCus";
@@ -8,20 +7,18 @@ import AddNewMarketing from "./pages/addnewMarketing";
 import MarketingInfo from "./pages/marketingInfo";
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
 import Orders from './pages/Orders';
 import Customers from './pages/Customers';
 import Marketing from './pages/Marketing';
 import Inventory from './pages/Inventory';
-import './App.css';
-
+import Home from './pages/homepage';
+import NewOrder from "./pages/newOrder";
 function App() {
   return (
     <>
-      {/*       <Router>
+      <Router>
         <Routes>
-          <Route path="/" element={<Navbar />} />
+          <Route path="/" element={<Home />} />
           <Route path='/listcus/:cusId' element={<CusInfo />} />
           <Route path='/listemp/:empId' element={<EmpInfo />} />
           <Route path='/listcus/addcus' element={<AddNewCus />} />
@@ -29,23 +26,13 @@ function App() {
           <Route path='/listmarketing/edit/:marketingId' element={<EditMarketingInfo />} />
           <Route path='/listmarketing/addmar' element={<AddNewMarketing />} />
           <Route path='/listmarketing/:marketingId' element={<MarketingInfo />} />
+          <Route path="/listorder" element={<Orders />} />
+          <Route path="/listcus" element={<Customers />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path='/neworder' element={<NewOrder />} />
         </Routes>
-      </Router> */}
-      <Router>
-        <div className="App">
-          <Sidebar />
-          <div className="main-content">
-            <Header />
-            <Routes>
-              <Route path="/" element={<h1>Trang Tổng Quan</h1>} />
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/customers" element={<Customers />} />
-              <Route path="/marketing" element={<Marketing />} />
-              <Route path="/inventory" element={<Inventory />} />
-            </Routes>
-          </div>
-        </div>
-      </Router>
+      </Router >
     </>
   );
 }
