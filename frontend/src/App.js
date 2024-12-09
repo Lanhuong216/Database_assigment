@@ -14,16 +14,12 @@ import Marketing from './pages/Marketing';
 import Inventory from './pages/Inventory';
 import Home from './pages/homepage';
 import NewOrder from "./pages/newOrder";
-<<<<<<< HEAD
 import Defective from "./pages/defectiveorder";
-import OrderInfo from "./pages/orderInfo";
 import Issueorder from "./pages/issueorder";
 import AddSupply from "./pages/addSupply";
 import Productinfo from "./pages/Productinfo";
 import Listsupplier from "./pages/listsupplier";
-=======
 import Employee from "./pages/Employee";
->>>>>>> 4586082517d0ecfbd2b1402eb6fd427e9ecd8ad4
 function App() {
   return (
     <>
@@ -42,16 +38,13 @@ function App() {
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
-<<<<<<< HEAD
           <Route path='/defectiveorder' element={<Defective />} />
           <Route path='/issueorder' element={<Issueorder />} />
           <Route path='/listproduct' element={<Productinfo />} />
           <Route path='/supplier' element={<Listsupplier />} />
           <Route path='/supplier/add' element={<AddSupply />} />
           <Route path='/listproduct/newproduct' element={<AddPoduct />} />
-=======
           <Route path='/listemp' element={<Employee />} />
->>>>>>> 4586082517d0ecfbd2b1402eb6fd427e9ecd8ad4
         </Routes>
       </Router >
     </>
