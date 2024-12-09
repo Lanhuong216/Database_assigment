@@ -1,9 +1,9 @@
 import axiosClient from "./axiosClient";
-const employeeApi = {
+const orderApi = {
     getAll() {
-        const url = '/api/employee';
+        const url = '/api/order';
         return axiosClient.get(url)
     }
 }
 
-export default employeeApi;
+export default orderApi;

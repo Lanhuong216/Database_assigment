@@ -1,7 +1,17 @@
 import React from 'react';
 import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/Orders.module.scss'
+import orderApi from '../api/orderApi';
+import { useState, useEffect } from 'react';
 const Orders = () => {
+  const [orderList, setOrderList] = useState([])
+  useEffect(() => {
+    const fetchOrd = async () => {
+      const emp = await orderApi.getAll();
+      setOrderList(emp)
+    }
+    fetchOrd();
+  }, [])
   return (
     <>
       <Navbar />
@@ -17,20 +27,17 @@ const Orders = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>#12345</td>
-            <td>23/11/2023</td>
-            <td>Nguyễn Văn A</td>
-            <td>Đang giao</td>
-            <td>203.000 VND</td>
-          </tr>
-          <tr>
-            <td>#12345</td>
-            <td>23/11/2023</td>
-            <td>Nguyễn Văn A</td>
-            <td>Đang giao</td>
-            <td>203.000 VND</td>
-          </tr>
+          {orderList.map((data) => {
+            return (
+              <tr>
+                <td>{data.order_id}</td>
+                <td>{data.create_date}</td>
+                <td>{data.name}</td>
+                <td>{data.status === "error" ? <div style={{ color: 'red', fontWeight: 'bold' }}>{data.status}</div> : data.status}</td>
+                <td>{data.total_price}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </>
