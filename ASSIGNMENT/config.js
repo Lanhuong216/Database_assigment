@@ -1,11 +1,22 @@
-require('dotenv').config()
-const mysql = require('mysql')
+// Filename - server.js
 
+// importing mysql module
+const mysql = require('mysql2');
+
+// configurations for creating mysql connection
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    passwrod: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE
-}
-)
-module.exports(connection)
+    host: 'autorack.proxy.rlwy.net',
+    port: 34252,
+    database: 'railway',
+    user: 'root',
+    password: 'KCIvbUEsQOsCVxYveGALhIamuPGtlOKm'
+});
+
+// executing connection
+connection.connect(function (err) {
+    if (err) throw err;
+    connection.query("SELECT * FROM Employee", function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+    });
+});
