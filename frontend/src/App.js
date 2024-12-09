@@ -15,7 +15,7 @@ import Inventory from './pages/Inventory';
 import Home from './pages/homepage';
 import NewOrder from "./pages/newOrder";
 import Defective from "./pages/defectiveorder";
-import OrderInfo from "./pages/orderInfo";
+import OrderInfo from "./pages/OrderInfo";
 import Issueorder from "./pages/issueorder";
 import AddSupply from "./pages/addSupply";
 import Productinfo from "./pages/Productinfo";
