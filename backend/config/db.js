@@ -1,25 +1,14 @@
-const sql = require('mssql');
-require('dotenv').config();
+// Filename - server.js
 
-const config = {
-    user: process.env.DB_USER || 'td',
-    password: process.env.DB_PASS || '123',
-    server: process.env.DB_SERVER || 'localhost',
-    database: process.env.DB_NAME || 'HCSDL',
-    options: {
-        encrypt: true,
-        trustServerCertificate: true,
-    },
-};
+// importing mysql module
+const mysql = require('mysql2');
 
-sql.connect(config)
-    .then(pool => {
-        console.log('Kết nối SQL Server thành công');
-        return pool.request().query('SELECT * FROM Employee');
-    })
-    .then(result => {
-        console.log(result.recordset);
-    })
-    .catch(err => {
-        console.error('Lỗi kết nối:', err);
-    });
+// configurations for creating mysql connection
+const connection = mysql.createConnection({
+    host: 'autorack.proxy.rlwy.net',
+    port: 34252,
+    database: 'railway',
+    user: 'root',
+    password: 'KCIvbUEsQOsCVxYveGALhIamuPGtlOKm'
+});
+module.exports = connection;
