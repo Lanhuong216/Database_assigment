@@ -3,11 +3,16 @@ import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/inventory.module.scss'
 import { useNavigate } from 'react-router-dom';
 const Inventory = () => {
+  const navigate = useNavigate();
+  const handleReturnProduct = () => {
+    navigate('/listproduct');
+  };
   return (
     <>
       <Navbar />
-      <div>
+      <div className={styles.content}>
         <h2 className={styles.title}>Quản lý kho</h2>
+        <button className={styles.btn} onClick={handleReturnProduct}>Xem sản phẩm</button>
         <div className={styles.table}>
           <table>
             <thead>
@@ -27,11 +32,12 @@ const Inventory = () => {
                 <td>200,000 VND</td>
                 <td>Có sẵn</td>
                 <td>100</td>
-                <td className={styles.update}>
+                <td >
                   <form>
                     <input type="text" id="quantity"></input>
+                    <button className={styles.add}>Thêm</button>
                   </form>
-                  <button className={styles.add}>Thêm</button>
+
                 </td>
               </tr>
               <tr>
@@ -40,11 +46,12 @@ const Inventory = () => {
                 <td>500,000 VND</td>
                 <td>Có sẵn</td>
                 <td>100</td>
-                <td className={styles.update}>
+                <td >
                   <form>
                     <input type="text" id="quantity"></input>
+                    <button className={styles.add}>Thêm</button>
                   </form>
-                  <button className={styles.add}>Thêm</button>
+
                 </td>
               </tr>
               <tr>
@@ -53,11 +60,11 @@ const Inventory = () => {
                 <td>500,000 VND</td>
                 <td>Có sẵn</td>
                 <td>100</td>
-                <td className={styles.update}>
+                <td >
                   <form>
                     <input type="text" id="quantity"></input>
+                    <button className={styles.add}>Thêm</button>
                   </form>
-                  <button className={styles.add}>Thêm</button>
                 </td>
               </tr>
             </tbody>

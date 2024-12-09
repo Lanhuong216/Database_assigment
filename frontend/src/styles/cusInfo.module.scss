@@ -1,11 +1,11 @@
-$hover-color: #60443A;
+$hover-color: #60443a;
 
 .title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
-    font-family: 'Josefin Sans';
-    color: #60443A;
+    font-family: "Josefin Sans";
+    color: #60443a;
     position: absolute;
     top: 20%;
     left: 20%;
@@ -17,8 +17,8 @@ $hover-color: #60443A;
     padding: 5px 10px;
     border: 3px solid $hover-color;
     cursor: pointer;
-    color: #60443A;
-    font-family: 'Josefin Sans';
+    color: #60443a;
+    font-family: "Josefin Sans";
     font-weight: 400px;
     font-size: 20px;
     position: absolute;
@@ -37,27 +37,27 @@ $hover-color: #60443A;
     position: absolute;
     top: 40%;
     left: 20%;
-    background-color: #FFF2E3;
+    background-color: #fff2e3;
     margin-left: 20px;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     width: 55%;
 
     label {
         display: block;
         font-size: 20px;
         padding-bottom: 10px;
-        color: #60443A;
+        color: #60443a;
     }
 
     textarea {
         width: 100%;
         padding: 10px;
-        border: 2px solid #60443A;
+        border: 2px solid #60443a;
         background-color: none;
     }
 
     h3 {
-        color: #60443A;
+        color: #60443a;
         font-size: 25px;
     }
 
@@ -71,7 +71,7 @@ $hover-color: #60443A;
         text-align: center;
 
         h5 {
-            color: #60443A;
+            color: #60443a;
         }
 
         p {
@@ -84,9 +84,8 @@ $hover-color: #60443A;
         position: absolute;
         left: 75%;
         text-align: center;
-
         h5 {
-            color: #60443A;
+            color: #60443a;
         }
     }
 
@@ -95,8 +94,8 @@ $hover-color: #60443A;
         padding: 5px 10px;
         border: 3px solid $hover-color;
         cursor: pointer;
-        color: #60443A;
-        font-family: 'Josefin Sans';
+        color: #60443a;
+        font-family: "Josefin Sans";
         font-weight: 400px;
         font-size: 20px;
 
@@ -110,15 +109,15 @@ $hover-color: #60443A;
 .content2 {
     padding: 30px;
     position: absolute;
-    top: 700px;
+    top: 800px;
     left: 20%;
-    background-color: #FFF2E3;
+    background-color: #fff2e3;
     margin-left: 20px;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     width: 55%;
 
     h3 {
-        color: #60443A;
+        color: #60443a;
         font-size: 25px;
     }
 
@@ -131,10 +130,9 @@ $hover-color: #60443A;
                 display: inline-block;
                 padding: 0 5px;
                 margin-right: 10px;
-                border: 2px solid #60443A;
+                border: 2px solid #60443a;
             }
         }
-
     }
 }
 
@@ -143,9 +141,9 @@ $hover-color: #60443A;
     position: absolute;
     top: 40%;
     left: 78%;
-    background-color: #FFF2E3;
+    background-color: #fff2e3;
     margin-left: 20px;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     width: 20%;
 
     label {
@@ -156,7 +154,7 @@ $hover-color: #60443A;
     textarea {
         margin-bottom: 5px;
         width: 100%;
-        border: 2px solid #60443A;
+        border: 2px solid #60443a;
         padding: 5px;
     }
 }
@@ -166,8 +164,8 @@ $hover-color: #60443A;
     padding: 2px 30px;
     border: 3px solid $hover-color;
     cursor: pointer;
-    color: #60443A;
-    font-family: 'Josefin Sans';
+    color: #60443a;
+    font-family: "Josefin Sans";
     font-weight: 400px;
     font-size: 20px;
     position: absolute;

@@ -9,7 +9,6 @@ var cors = require('cors');
 const PORT = 3000;
 
 app.use(cors());
-<<<<<<< HEAD
 app.get('/api/employee', async (req, res) => {
   try {
     connection.connect(function (err) {
@@ -25,11 +24,10 @@ app.get('/api/employee', async (req, res) => {
     res.status(500).send('Server Error');
   }
 })
-=======
+
 app.use('/api/employee', empRouter)
 app.use('/api/order', orderRouter)
 
->>>>>>> 4586082517d0ecfbd2b1402eb6fd427e9ecd8ad4
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -1,12 +1,12 @@
 .navbar {
     width: 15%;
-    background-color: #CFB38C;
+    background-color: #cfb38c;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: start;
     padding-bottom: 20px;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     height: 1850px;
 
     .navbar_menu {
@@ -15,7 +15,7 @@
         width: 100%;
 
         .menu_item_active {
-            background-color: #60443A;
+            background-color: #60443a;
             color: white;
             padding: 10px 20px;
             padding-bottom: 20px;
@@ -28,7 +28,7 @@
 
         .menu_item {
             padding: 10px 20px;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
             cursor: pointer;
             font-size: 25px;
             display: block;
@@ -36,17 +36,16 @@
             gap: 10px;
 
             &:hover {
-                background-color: #60443A;
+                background-color: #60443a;
                 color: white;
             }
 
             .submenu {
                 list-style: none;
                 display: block;
-
                 li {
                     padding-top: 20px;
-                    padding-bottom: 20px;
+                    padding-bottom: 5px;
                     font-size: 20px;
 
                     &:hover {

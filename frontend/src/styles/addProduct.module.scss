@@ -61,6 +61,7 @@ textarea {
 .radio_group label {
   display: block;
   margin-bottom: 5px;
+  font-family: "Josefin Sans";
 }
 
 .radio_group1,
@@ -71,12 +72,14 @@ textarea {
     /* margin-left: 20px; */
     font-size: 20px;
     font-weight: bold;
+    font-family: "Josefin Sans";
   }
 
   label {
     margin-left: 20px;
     font-size: 15px;
-    font-weight: lighter;
+    font-weight: 300;
+    font-family: "Josefin Sans";
   }
 }
 
@@ -126,7 +129,6 @@ textarea {
   background-color: #fff2e3;
   width: 703px;
   height: 270px;
-
   .version {
     margin-left: 450px;
     padding: 10px;

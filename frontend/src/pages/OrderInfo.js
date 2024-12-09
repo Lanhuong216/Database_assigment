@@ -9,7 +9,7 @@ function OrderInfo() {
             <div className={styles.title}>Đơn hàng 1234</div>
             <button className={styles.delete_button} onClick={() => navigate(`/listemp/deactive`)}>In đơn hàng</button>
             <form>
-            <div className={styles.content}>  
+                <div className={styles.content}>
                     <div className={styles.leftitem}>
                         <h4>Chi tiết đơn hàng</h4>
                     </div>
