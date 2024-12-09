@@ -37,7 +37,7 @@ const Employee = () => {
                                     <td>{data.name}</td>
                                     <td>{data.email}</td>
                                     <td>{data.phone_number}</td>
-                                    <td>{data.status}</td>
+                                    <td>{data.status === '1' ? "Đang làm việc" : "Đã nghỉ"}</td>
                                     <td>1</td>
                                 </tr>
 

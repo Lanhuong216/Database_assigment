@@ -5,7 +5,19 @@ const getEmp = async (req, res) => {
   try {
     connection.connect(function (err) {
       if (err) throw err;
-      connection.query("SELECT * FROM Employee", function (err, result) {
+      connection.query(`SELECT 
+    E.*, 
+    CASE 
+        WHEN P.employee_ID IS NOT NULL THEN 'Part_time'
+        WHEN F.employee_ID IS NOT NULL THEN 'Full_time'
+        ELSE 'Unknown'
+    END AS EmployeeType
+FROM 
+    Employee E
+LEFT JOIN 
+    Part_time P ON E.employee_ID = P.employee_ID
+LEFT JOIN 
+    Full_time F ON E.employee_ID = F.employee_ID;`, function (err, result) {
         if (err) throw err;
         console.log(result);
         res.send(result)
