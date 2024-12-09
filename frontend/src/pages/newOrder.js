@@ -1,7 +1,13 @@
 import React from 'react';
 import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/Orders.module.scss'
+import { useNavigate } from 'react-router-dom';
 const NewOrder = () => {
+    const navigate = useNavigate();
+
+    const handleRowClick = (order_id) => {
+        navigate(`/neworder/${order_id}`); // Điều hướng tới trang chi tiết của khách hàng
+    };
     return (
         <>
             <Navbar />
@@ -19,15 +25,15 @@ const NewOrder = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>#12345</td>
+                        <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
+                            <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
                             <td>Đang giao</td>
                             <td><input type="radio"></input></td>
                         </tr>
-                        <tr>
-                            <td>#12345</td>
+                        <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
+                            <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
                             <td>203.000 VND</td>

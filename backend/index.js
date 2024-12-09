@@ -10,7 +10,6 @@ var cors = require('cors');
 const PORT = 3000;
 
 app.use(cors());
-
 app.use('/api/employee', empRouter)
 app.use('/api/order', orderRouter)
 app.use('/api/product', productRouther)

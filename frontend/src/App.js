@@ -39,6 +39,7 @@ function App() {
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
+          <Route path='/neworder/:order_id' element={<OrderInfo />} />
           <Route path='/defectiveorder' element={<Defective />} />
           <Route path='/issueorder' element={<Issueorder />} />
           <Route path='/listproduct' element={<Productinfo />} />
