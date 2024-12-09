@@ -7,14 +7,18 @@
 }
 
 .table {
+    table-layout: fixed;
     position: absolute;
-    left: 20%;
-    top: 40%;
+    margin-left: 30%;
+    margin-top: -101%;
     border-collapse: collapse;
-    width: 70%;
+    width: 60%;
     padding: 5px 10px;
     font-family: "Josefin Sans";
-
+    td {
+        height: 70px;
+        border-collapse: collapse;
+    }
     td,
     th {
         border: 2px solid #60443a;
@@ -38,8 +42,20 @@
         color: white;
         font-size: 20px;
     }
-
     input {
         text-align: center;
+    }
+}
+.update {
+    display: flex;
+    gap: 5px;
+}
+.update input {
+    justify-content: center;
+    align-items: center;
+}
+.add {
+    &:hover {
+        background-color: #a68174;
     }
 }

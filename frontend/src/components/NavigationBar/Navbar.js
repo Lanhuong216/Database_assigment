@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
-import { useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import Header from "../Header/Header";
 function Navbar() {
-    let navigate = useNavigate()
+    let navigate = useNavigate();
+    const shop_id = 20;
     return (
         <>
             <Header />
             <div className={styles.navbar}>
 
                 <ul className={styles.navbar_menu}>
-                    <li className={styles.menu_item} onClick={() => navigate(`/`)}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/${shop_id}`)}>
                         Tổng quan
                     </li>
                     <li className={styles.menu_item}>

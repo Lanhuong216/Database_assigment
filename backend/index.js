@@ -7,7 +7,7 @@ var cors = require('cors');
 // Khởi chạy server
 const PORT = 3000;
 app.use(cors());
-app.get('/api/post', async (req, res) => {
+app.get('/api/employee', async (req, res) => {
   try {
     connection.connect(function (err) {
       if (err) throw err;
@@ -22,6 +22,7 @@ app.get('/api/post', async (req, res) => {
     res.status(500).send('Server Error');
   }
 })
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

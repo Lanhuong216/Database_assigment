@@ -2,6 +2,7 @@ import CusInfo from "./pages/cusInfo";
 import EmpInfo from "./pages/empInfo";
 import AddNewCus from "./pages/addnewCus";
 import AddNewEmp from "./pages/addnewEmp";
+import AddPoduct from "./pages/addProduct";
 import EditMarketingInfo from "./pages/editmarketingInfo";
 import AddNewMarketing from "./pages/addnewMarketing";
 import MarketingInfo from "./pages/marketingInfo";
@@ -13,12 +14,18 @@ import Marketing from './pages/Marketing';
 import Inventory from './pages/Inventory';
 import Home from './pages/homepage';
 import NewOrder from "./pages/newOrder";
+import Defective from "./pages/defectiveorder";
+import OrderInfo from "./pages/orderInfo";
+import Issueorder from "./pages/issueorder";
+import AddSupply from "./pages/addSupply";
+import Productinfo from "./pages/Productinfo";
+import Listsupplier from "./pages/listsupplier";
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/:shop_id" element={<Home />} />
           <Route path='/listcus/:cusId' element={<CusInfo />} />
           <Route path='/listemp/:empId' element={<EmpInfo />} />
           <Route path='/listcus/addcus' element={<AddNewCus />} />
@@ -31,6 +38,12 @@ function App() {
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
+          <Route path='/defectiveorder' element={<Defective />} />
+          <Route path='/issueorder' element={<Issueorder />} />
+          <Route path='/listproduct' element={<Productinfo />} />
+          <Route path='/supplier' element={<Listsupplier />} />
+          <Route path='/supplier/add' element={<AddSupply />} />
+          <Route path='/listproduct/newproduct' element={<AddPoduct />} />
         </Routes>
       </Router >
     </>
