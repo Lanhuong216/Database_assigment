@@ -43,15 +43,17 @@
         text-align: center;
     }
 }
+
 .btn {
     display: flex;
     align-items: center;
     margin-left: 82%;
-    margin-top: -105%;
+    margin-top: -110%;
     position: absolute;
     font-family: "Josefin Sans";
     width: 120px;
     height: 40px;
+
     &:hover {
         background-color: #a67969;
     }

@@ -42,9 +42,7 @@ const getExportOrder = async (req, res) => {
     try {
         connection.connect(function (err) {
             if (err) throw err;
-            connection.query(`SELECT O.*, C.name
-FROM Order_Bill O, Customer C
-WHERE O.customer_id = C.customer_id AND  O.status = 'error';`, function (err, result) {
+            connection.query(`SELECT * FROM Issue_bill`, function (err, result) {
                 if (err) throw err;
                 console.log(result);
                 res.send(result)

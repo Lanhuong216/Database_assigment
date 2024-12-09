@@ -18,6 +18,7 @@ const Issueorder = () => {
             <h2 className={styles.title}>Danh sách đơn hàng</h2>
             <table className={styles.table}>
                 <thead>
+
                     <tr>
                         <th>Mã đơn hàng</th>
                         <th> Ngày xuất kho</th>
@@ -26,18 +27,17 @@ const Issueorder = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#12345</td>
-                        <td>23/11/2023</td>
-                        <td>23/10/2023</td>
-                        <td>203</td>
-                    </tr>
-                    <tr>
-                        <td>#12346</td>
-                        <td>23/11/2023</td>
-                        <td>23/10/2023</td>
-                        <td>50</td>
-                    </tr>
+                    {issueorderList.map((data) => {
+                        return (
+                            <tr>
+                                <td>{data.product_id}</td>
+                                <td>{data.import_date}</td>
+                                <td>{data.export_date}</td>
+                                <td>{data.total_product}</td>
+                            </tr>
+                        )
+                    })}
+
                 </tbody>
             </table>
         </>

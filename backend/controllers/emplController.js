@@ -9,7 +9,7 @@ const getEmp = async (req, res) => {
     E.*, 
     CASE 
         WHEN P.employee_ID IS NOT NULL THEN 'Part_time'
-        WHEN F.employee_ID IS NOT NULL THEN 'Full_time'
+        WHEN F.employee_ID IS NOT NULL THEN F.Position
         ELSE 'Unknown'
     END AS EmployeeType
 FROM 

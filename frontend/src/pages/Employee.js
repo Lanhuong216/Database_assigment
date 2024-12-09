@@ -3,6 +3,7 @@ import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/Orders.module.scss'
 import { useEffect, useState } from 'react';
 import employeeApi from '../api/employeeApi';
+import { useNavigate } from 'react-router-dom';
 const Employee = () => {
     const [empList, setEmpList] = useState([])
     useEffect(() => {
@@ -12,7 +13,7 @@ const Employee = () => {
         }
         fetchEmp();
     }, [])
-
+    let navigate = useNavigate();
     return (
         <>
             <Navbar />
@@ -32,13 +33,13 @@ const Employee = () => {
                     {empList.map((data) => {
                         return (
                             <>
-                                <tr>
-                                    <td>{data.employee_id}</td>
+                                <tr onClick={() => navigate(`/listemp/:${data.employee_id}`)}>
+                                    <td >{data.employee_id}</td>
                                     <td>{data.name}</td>
                                     <td>{data.email}</td>
                                     <td>{data.phone_number}</td>
                                     <td>{data.status === '1' ? "Đang làm việc" : "Đã nghỉ"}</td>
-                                    <td>1</td>
+                                    <td>{data.EmployeeType}</td>
                                 </tr>
 
                             </>
