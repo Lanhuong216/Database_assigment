@@ -13,6 +13,7 @@ import Marketing from './pages/Marketing';
 import Inventory from './pages/Inventory';
 import Home from './pages/homepage';
 import NewOrder from "./pages/newOrder";
+import Employee from "./pages/Employee";
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
+          <Route path='/listemp' element={<Employee />} />
         </Routes>
       </Router >
     </>

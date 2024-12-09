@@ -33,7 +33,7 @@ function Navbar() {
                     <li className={styles.menu_item} onClick={() => navigate(`/listempl`)}>
                         Khách hàng
                     </li>
-                    <li className={styles.menu_item} onClick={() => navigate(`/listcus`)}>
+                    <li className={styles.menu_item} onClick={() => navigate(`/listemp`)}>
                         Nhân viên
                     </li>
                     <li className={styles.menu_item} onClick={() => navigate(`/marketing`)}>

@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 const employeeApi = {
     getAll() {
-        const url = '/api/post';
+        const url = '/api/employee';
         return axiosClient.get(url)
     }
 }
