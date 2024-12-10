@@ -7,7 +7,7 @@ import productApi from '../api/productApi';
 const Listsupplier = () => {
     const navigate = useNavigate();
     const handleAddSupplier = () => {
-        navigate('/supplier/add');
+        navigate('/supplier/edit');
     };
     const [suplrList, setSuplrList] = useState([])
     useEffect(() => {
@@ -35,7 +35,7 @@ const Listsupplier = () => {
                 <tbody>
                     {suplrList.map((data) => {
                         return (
-                            <tr>
+                            <tr onClick={handleAddSupplier}>
                                 <td>{data.name}</td>
                                 <td>{data.location}</td>
                                 <td>{data.phone_number}</td>

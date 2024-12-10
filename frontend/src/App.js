@@ -7,6 +7,8 @@ import EditMarketingInfo from "./pages/editmarketingInfo";
 import AddNewMarketing from "./pages/addnewMarketing";
 import MarketingInfo from "./pages/marketingInfo";
 import React from 'react';
+import EditAddProduct from "./pages/editAddProduct";
+import EditSuply from "./pages/editSupply";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Orders from './pages/Orders';
 import Customers from './pages/Customers';
@@ -45,7 +47,9 @@ function App() {
           <Route path='/defectiveorder' element={<Defective />} />
           <Route path='/issueorder' element={<Issueorder />} />
           <Route path='/listproduct' element={<Productinfo />} />
+          <Route path='/listproduct/edit' element={<EditAddProduct />} />
           <Route path='/supplier' element={<Listsupplier />} />
+          <Route path='/supplier/edit' element={<EditSuply />} />
           <Route path='/supplier/add' element={<AddSupply />} />
           <Route path='/listproduct/newproduct' element={<AddPoduct />} />
           <Route path='/listemp' element={<Employee />} />

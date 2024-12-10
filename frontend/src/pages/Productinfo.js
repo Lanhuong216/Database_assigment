@@ -38,7 +38,7 @@ const Productinfo = () => {
                     {prdtList.map((data) => {
                         return (
                             <>
-                                <tr>
+                                <tr onClick={() => navigate(`/listproduct/edit`)}>
                                     <td>{data.product_id}</td>
                                     <td>{data.describle}</td>
                                     <td>{data.location}</td>
