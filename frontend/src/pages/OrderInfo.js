@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 function OrderInfo() {
     const { order_id } = useParams();
-    const navigate = useNavigate();
     const orderDetails = {
         12345: {
             customer: "Nguyễn Văn A",

@@ -1,32 +1,45 @@
 import React from 'react';
-
-const Marketing = () => {
+import Navbar from '../components/NavigationBar/Navbar';
+import styles from '../styles/marketing.module.scss'
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+const Employee = () => {
+  const navigate = useNavigate();
+  const marketingId = '1234'
   return (
-    <div>
-      <h2>Danh sách chiến dịch tiếp thị</h2>
-      <table>
+    <>
+      <Navbar />
+      <h2 className={styles.title}>Tất cả tiếp thị</h2>
+      <div className={styles.abc}>
+        <button className={styles.create} onClick={() => navigate('/listmarketing/addmar')}>Tạo khuyến mãi</button>
+      </div>
+
+      <table className={styles.table}>
         <thead>
-          <tr>
-            <th>Tên chiến dịch</th>
-            <th>Ngày bắt đầu</th>
-            <th>Kết quả</th>
+          <tr >
+            <th>Mã tiếp thị</th>
+            <th>Loại tiếp thị</th>
+            <th>Thời gian bắt đầu</th>
+            <th>Thời gian kết thúc</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Khuyến mãi Tết</td>
-            <td>01/01/2024</td>
-            <td>Thành công</td>
+          <tr onClick={() => navigate(`/listmarketing/${marketingId}`)} >
+            <td>1234</td>
+            <td>Quảng cáo</td>
+            <td>1/12/2024</td>
+            <td>31/12/2024</td>
           </tr>
-          <tr>
-            <td>Giảm giá 20%</td>
-            <td>15/12/2023</td>
-            <td>Đang chạy</td>
+          <tr onClick={() => navigate(`/listmarketing/${marketingId}`)}>
+            <td>1234</td>
+            <td>Khuyến mãi</td>
+            <td>1/12/2024</td>
+            <td>31/12/2024</td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
-export default Marketing;
+export default Employee;
