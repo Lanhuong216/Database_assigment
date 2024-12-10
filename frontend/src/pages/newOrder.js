@@ -6,7 +6,7 @@ const NewOrder = () => {
     const navigate = useNavigate();
 
     const handleRowClick = (order_id) => {
-        navigate(`/neworder/:${order_id}`); // Điều hướng tới trang chi tiết của khách hàng
+        navigate(`/neworder/${order_id}`); // Điều hướng tới trang chi tiết của khách hàng
     };
     return (
         <>

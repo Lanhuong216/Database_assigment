@@ -21,7 +21,7 @@ import AddSupply from "./pages/addSupply";
 import Productinfo from "./pages/Productinfo";
 import Listsupplier from "./pages/listsupplier";
 import Employee from "./pages/Employee";
-// import OrderAllInfo from "./pages/InforAllorder";
+import OrderAllInfo from "./pages/InforAllorder";
 function App() {
   return (
     <>
@@ -34,8 +34,8 @@ function App() {
           <Route path='/listmarketing/edit/:marketingId' element={<EditMarketingInfo />} />
           <Route path='/listmarketing/addmar' element={<AddNewMarketing />} />
           <Route path='/listmarketing/:marketingId' element={<MarketingInfo />} />
-          <Route path="/listorder" element={<Orders />} />
-          {/* <Route path="/listorder/:order_id" element={<OrderAllInfo />} /> */}
+          <Route path='/listorder' element={<Orders />} />
+          <Route path='/listorder/:order_id' element={<OrderAllInfo />} />
           <Route path="/listcus" element={<Customers />} />
           <Route path="/listcus/add" element={<AddNewCus />} />
           <Route path="/listmarketing" element={<Marketing />} />

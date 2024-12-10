@@ -40,9 +40,7 @@ function Navbar() {
                     <li className={styles.menu_item} onClick={() => navigate(`/listmarketing`)}>
                         Tiếp thị
                     </li>
-                    <li className={styles.menu_item} onClick={() => navigate(`/report`)}>
-                        Báo cáo
-                    </li>
+
                 </ul>
             </div>
         </>

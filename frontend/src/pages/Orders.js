@@ -3,7 +3,7 @@ import Navbar from '../components/NavigationBar/Navbar';
 import styles from '../styles/Orders.module.scss'
 import orderApi from '../api/orderApi';
 import { useState, useEffect } from 'react';
-
+import { useNavigate } from "react-router-dom";
 const Orders = () => {
   const [orderList, setOrderList] = useState([])
   useEffect(() => {
@@ -13,6 +13,7 @@ const Orders = () => {
     }
     fetchOrd();
   }, [])
+  let navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -30,7 +31,7 @@ const Orders = () => {
         <tbody>
           {orderList.map((data) => {
             return (
-              <tr >
+              <tr onClick={() => navigate(`/listorder/${data.order_id}`)} >
                 <td>{data.order_id}</td>
                 <td>{data.create_date}</td>
                 <td>{data.name}</td>

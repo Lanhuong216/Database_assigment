@@ -27,12 +27,13 @@ function OrderInfo() {
         }
 
     };
+    const nagative = useNavigate();
     const order = orderDetails[order_id] || {};
     return (
         <>
             <Navbar />
             <div className={styles.title}>Đơn hàng {order.order_id}</div>
-            <div className={styles.btn}>Nhận đơn</div>
+            <div className={styles.btn} onClick={() => nagative('/neworder')}>Nhận đơn</div>
             <button className={styles.delete_button}>In đơn hàng</button>
             <form>
                 <div className={styles.content}>
