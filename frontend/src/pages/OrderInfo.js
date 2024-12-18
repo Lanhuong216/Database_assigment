@@ -23,7 +23,7 @@ function OrderInfo() {
         <>
             <Navbar />
             <div className={styles.title}>Đơn hàng {order_id}</div>
-            <div className={styles.btn}>Nhận đơn</div>
+            <div className={styles.btn} onClick={() => navigate(`/listorder`)}>Quay lại </div>
             <button className={styles.delete_button}>In đơn hàng</button>
             <form>
                 <div className={styles.content}>
@@ -33,7 +33,7 @@ function OrderInfo() {
                     <hr />
                     <div className={styles.detail}>
                         <h3>{order_id}</h3>
-                        {orderInfo.map((data) => {
+                        {orderInfo.map((data, index, arr) => {
                             num++;
                             return (
                                 <>
@@ -45,33 +45,40 @@ function OrderInfo() {
                                         <label>Giá : {data.total_price}</label>
 
                                     </div>
-
+                                    {(arr[index + 1]) == undefined ?
+                                        <div className={styles.statusOrd}>
+                                            <h7>Phương thức thanh toán: {(data.order_payment) === "1" ? "Tiền mặt" : "Chuyển khoản"}</h7>
+                                            <label>Tiếp thị: -0 VND</label>
+                                            <label>Tổng cộng: {(data.total_price)}</label>
+                                        </div> : <></>}
                                 </>
                             )
                         })}
-                        <div className={styles.statusOrd}>
-                            <h7>Phương thức thanh toán: {JSON.stringify(orderInfo) === "1" ? "Tiền mặt" : "Chuyển khoản"}</h7>
-                            <label>Tiếp thị: -0 VND</label>
-                            <label>Tổng cộng: {JSON.stringify(orderInfo[0].total_price)}</label>
-                        </div>
                     </div>
 
                     <div className={styles.content2}>
                         <h3>Ghi chú</h3>
                         <p>Không có ghi chú</p>
                     </div>
+                    {orderInfo.map((data, index, arr) => {
+                        return (
+                            <>
+                                {(index === 0) ?
+                                    <div className={styles.content3}>
+                                        <h3>Khách hàng: </h3>
+                                        <p>{JSON.stringify(data.customer_name)}</p>
+                                        <p>Số đơn: {num}</p>
+                                        <hr />
 
-                    <div className={styles.content3}>
-                        <h3>Khách hàng: </h3>
-                        <p>{JSON.stringify(orderInfo[0].customer_name)}</p>
-                        <p>Số đơn: {num}</p>
-                        <hr />
+                                        <h4>Liên hệ</h4>
+                                        <p>{JSON.stringify(data.customer_phone)}</p>
+                                        <hr />
 
-                        <h4>Liên hệ</h4>
-                        <p>{JSON.stringify(orderInfo[0].customer_phone)}</p>
-                        <hr />
-
-                    </div>
+                                    </div>
+                                    : <></>}
+                            </>
+                        )
+                    })}
                 </div>
             </form>
         </>
