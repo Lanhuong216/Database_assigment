@@ -15,6 +15,10 @@ const orderApi = {
     getSpecificOrder(id) {
         const url = `api/order/${id}`;
         return axiosClient.get(url)
+    },
+    post(data) {
+        const url = `api/order`;
+        return axiosClient.post(url, data)
     }
 }
 

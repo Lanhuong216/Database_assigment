@@ -4,55 +4,83 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import productApi from "../api/productApi";
+import orderApi from "../api/orderApi";
 function NewOrderInfo() {
     const { order_id } = useParams();
     const navigate = useNavigate();
-    const productId = ['00000001', '00000002']
+    const productId = ['PD1', 'PD2']
+
     const [productList, setProductList] = useState([])
     useEffect(() => {
+        let isMounted = true;
+
         const fetchProducts = async () => {
             try {
-                // Fetch all products using Promise.all
-                const products = await Promise.all(
+                let products = await Promise.all(
                     productId.map(async (id) => {
-                        const product = await productApi.getProduct(id);
-                        return product;
+                        return await productApi.getProduct(id);
                     })
                 );
-                setProductList(products); // Update the state with all fetched products
+
+                if (isMounted) {
+                    console.log("Fetched Products:", products);
+                    setProductList(products);
+                }
             } catch (error) {
                 console.error("Failed to fetch products:", error);
             }
         };
+
         fetchProducts();
+
+        return () => {
+            isMounted = false; // Cleanup
+        };
     }, []);
+
+    const formData = [
+        { productId: 'PD1', size: 'M', color: 'Red', quantity: 2, customer_name: 'Nguyễn Văn Thái', phone_number: '0339863207', email: "nguyenvanthai@gmail.com", address: 'BRVT' },
+        { productId: 'PD2', size: 'L', color: 'Red', quantity: 2, customer_name: 'Nguyễn Văn Thái', phone_number: '0339863207', email: "nguyenvanthai@gmail.com", address: 'BRVT' }
+    ]
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
+
+        try {
+            const response = await orderApi.post(formData); // Replace with your API endpoint
+            alert("Dữ liệu đã được lưu thành công!");
+            navigate("/listorder");
+            alert("Nhận đơn thành công")
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Đã xảy ra lỗi khi lưu dữ liệu!");
+        }
+    };
     return (
         <>
             <Navbar />
-            {/*             {productList.map((data, index) => {
-                return (
-                    <h2 key={index}>{JSON.stringify(data)}</h2> // Map through productList
-                );
-            })} */}
             <div className={styles.title}>Đơn hàng {order_id}</div>
-            <div className={styles.btn} onClick={() => navigate(`/listorder`)}>Nhận đơn</div>
+
             <button className={styles.delete_button}>In đơn hàng</button>
-            <form>
+            <form onSubmit={handleSubmit}>
+                <button type="submit" className={styles.btn} onClick={() => navigate(`/listorder`)}>Nhận đơn</button>
                 <div className={styles.content}>
                     <div className={styles.leftitem}>
                         <h4>Chi tiết đơn hàng</h4>
                     </div>
                     <hr />
                     <div className={styles.detail}>
-                        {productList.map((data) => {
+                        {productList.map((data, index) => {
                             return (
                                 <>
                                     <div className={styles.leftdetail}>
-                                        <label>M / Red: M x 2</label>
-                                        <label>ID Sản phẩm: {data.product_id}</label>
+                                        <label>{formData[index].size} / {formData[index].color}: {formData[index].size} x {formData[index].quantity}</label>
+                                        <label>ID Sản phẩm: {(data[0].product_id)}</label>
+                                        <label>Tên sản phẩm: {(data[0].describle)}</label>
                                     </div>
                                     <div className={styles.centerdetail}>
-                                        <label>Giá : {data.sell_price_per_product}</label>
+                                        <label>Giá : {(data[0].sell_price_per_product)}</label>
 
                                     </div>
                                 </>
@@ -66,11 +94,13 @@ function NewOrderInfo() {
                     </div>
                     <div className={styles.content3}>
                         <h3>Khách hàng: </h3>
-                        <p>Nguyễn Văn Mãi</p>
+                        <p>{formData[0].customer_name}</p>
                         <hr />
 
                         <h4>Liên hệ</h4>
-                        <p>0328368604</p>
+                        <p>{formData[0].phone_number}</p>
+                        <p>{formData[0].address}</p>
+                        <p>{formData[0].email}</p>
                         <hr />
 
                     </div>

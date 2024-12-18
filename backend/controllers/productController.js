@@ -63,6 +63,7 @@ JOIN
 }
 const getProductId = async (req, res) => {
     const id = String(req.params.id)
+    console.log(id)
     try {
         connection.connect(function (err) {
             if (err) throw err;

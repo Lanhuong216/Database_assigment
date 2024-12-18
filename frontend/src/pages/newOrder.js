@@ -17,7 +17,6 @@ const NewOrder = () => {
 
                     <thead>
                         <tr>
-                            <th>Mã đơn hàng</th>
                             <th> Ngày đặt</th>
                             <th>Khách hàng</th>
                             <th> Tổng tiền</th>
@@ -25,15 +24,13 @@ const NewOrder = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
-                            <td>12345</td>
+                        <tr onClick={() => handleRowClick('1')} className={styles.clickableRow}>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
                             <td>-</td>
                             <td><input type="radio"></input></td>
                         </tr>
-                        <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
-                            <td>12345</td>
+                        <tr onClick={() => handleRowClick('2')} className={styles.clickableRow}>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
                             <td>-</td>

@@ -98,4 +98,17 @@ WHERE
         res.status(500).send('Server Error');
     }
 }
-module.exports = { getOrder, getExportOrder, getDefectiveOrder, getSpecificOrder };
+const postOrder = async (req, res) => {
+    console.log(req.body)
+    // Validate required fields
+    /* if (!nameMar) {
+        return res.status(400).json({ message: "Required fields are missing." });
+    } */
+
+    // Send success response
+    res.status(201).json({
+        message: "Marketing program added successfully!",
+        data: "newMarketingProgram"
+    });
+}
+module.exports = { getOrder, getExportOrder, getDefectiveOrder, getSpecificOrder, postOrder };
