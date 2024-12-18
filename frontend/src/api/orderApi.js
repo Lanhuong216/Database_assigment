@@ -11,6 +11,10 @@ const orderApi = {
     getExportOrder() {
         const url = 'api/order/export';
         return axiosClient.get(url)
+    },
+    getSpecificOrder(id) {
+        const url = `api/order/${id}`;
+        return axiosClient.get(url)
     }
 }
 

@@ -2,6 +2,7 @@ import Navbar from "../components/NavigationBar/Navbar";
 import styles from '../styles/addnewMarketing.module.scss';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import marketingApi from "../api/marketingApi";
 function AddNewMarketing() {
     const navigate = useNavigate()
     const [selectedOption, setSelectedOption] = useState("");
@@ -14,18 +15,52 @@ function AddNewMarketing() {
     const handleOptionChange1 = (event) => {
         setSelectedOption1(event.target.value);
     };
+    const [formData, setFormData] = useState({
+        nameMar: "",
+        note: "",
+        discountType: "",
+        discountValue: "",
+        maxDiscountValue: "",
+        applyTo: "",
+        conditionType: "",
+        conditionValue: "",
+        startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: ""
+    });
+
+    // Handle input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
+
+        try {
+            const response = await marketingApi.post(formData); // Replace with your API endpoint
+            alert("Dữ liệu đã được lưu thành công!");
+            navigate("/marketing"); // Redirect after successful save
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Đã xảy ra lỗi khi lưu dữ liệu!");
+        }
+    };
 
     return (
         <>
             <Navbar />
             <div className={styles.title}>Thêm mã tiếp thị</div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className={styles.content}>
                     <div className={styles.detail}>
                         <h3>Tên chương trình tiếp thị</h3>
-                        <input type="text" placeholder="Nhập tên"></input>
+                        <input type="text" placeholder="Nhập tên" name="nameMar" onChange={handleInputChange}></input>
                         <label> Ghi chú</label>
-                        <textarea id="note" placeholder="Nhập ghi chú"></textarea>
+                        <textarea name="note" placeholder="Nhập ghi chú" onChange={handleInputChange}></textarea>
                     </div>
                 </div>
                 <div className={styles.content2}>
@@ -133,7 +168,7 @@ function AddNewMarketing() {
                     </div>
 
                 </div>
-                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listcus`)}></input>
+                <input type="submit" value="Lưu" className={styles.save_button} /* onClick={() => navigate(`/listcus`) }*/></input>
             </form>
         </>
     )

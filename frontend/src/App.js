@@ -34,6 +34,7 @@ function App() {
           <Route path='/listmarketing/addmar' element={<AddNewMarketing />} />
           <Route path='/listmarketing/:marketingId' element={<MarketingInfo />} />
           <Route path="/listorder" element={<Orders />} />
+          <Route path="/listorder/:order_id" element={<OrderInfo />} />
           <Route path="/listcus" element={<Customers />} />
           <Route path="/listcus/add" element={<AddNewCus />} />
           <Route path="/marketing" element={<Marketing />} />

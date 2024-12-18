@@ -2,37 +2,27 @@ import Navbar from "../components/NavigationBar/Navbar";
 import styles from '../styles/orderInfo.module.scss';
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import orderApi from "../api/orderApi";
 function OrderInfo() {
     const { order_id } = useParams();
     const navigate = useNavigate();
-    const orderDetails = {
-        12345: {
-            customer: "Nguyễn Văn A",
-            phone: "0325648913",
-            email: "nguyenvanA12@gmail.com",
-            address: "42/3 đường TL48, phường Thạnh Lộc, quận 12, TPHCM",
-            items: [
-                {
-                    name: "AIRism Cotton Ribbed Polo Shirt",
-                    size: "L",
-                    color: "White",
-                    sku: "abc",
-                    price: "203.000 VND",
-                    quantity: 1,
-                    total: "203.000 VND",
-                },
-            ],
-            notes: "Đơn giao về thì gọi e ra lấy nha shop",
-            paymentStatus: "Đã thanh toán"
-        }
 
-    };
-    const order = orderDetails[order_id] || {};
+    const [orderInfo, setOrderInfo] = useState([])
+
+    useEffect(() => {
+        const fetchOrdInfo = async () => {
+            const emp = await orderApi.getSpecificOrder(order_id);
+            setOrderInfo(emp)
+            console.log(emp)
+        }
+        fetchOrdInfo();
+    }, [])
+    let num = 0;
     return (
         <>
             <Navbar />
-            <div className={styles.title}>Đơn hàng {order.order_id}</div>
+            <div className={styles.title}>Đơn hàng {order_id}</div>
             <div className={styles.btn}>Nhận đơn</div>
             <button className={styles.delete_button}>In đơn hàng</button>
             <form>
@@ -40,45 +30,47 @@ function OrderInfo() {
                     <div className={styles.leftitem}>
                         <h4>Chi tiết đơn hàng</h4>
                     </div>
-                    <div className={styles.rightitem}>
-                        <h6>Đã nhận</h6>
-                    </div>
                     <hr />
                     <div className={styles.detail}>
-                        <h3>{order.items[0].name}</h3>
-                        <div className={styles.leftdetail}>
-                            <label>{order.items[0].size} / {order.items[0].color} : {order.items[0].price} x {order.items[0].quantity}</label>
-                            <label>SKU: {order.items[0].sku}</label>
-                        </div>
-                        <div className={styles.centerdetail}>
-                            <label>Giá : {order.items[0].price}</label>
-                            <label>Tiếp thị: -0 VND</label>
-                            <label>Tổng cộng: {order.items[0].total}</label>
-                        </div>
+                        <h3>{order_id}</h3>
+                        {orderInfo.map((data) => {
+                            num++;
+                            return (
+                                <>
+                                    <div className={styles.leftdetail}>
+                                        <label>{data.product_size} / {data.product_color} : {data.product_size} x {data.product_quantity}</label>
+                                        <label>ID Sản phẩm: {data.product_id}</label>
+                                    </div>
+                                    <div className={styles.centerdetail}>
+                                        <label>Giá : {data.total_price}</label>
 
+                                    </div>
+
+                                </>
+                            )
+                        })}
                         <div className={styles.statusOrd}>
-                            <h7>Phương thức thanh toán: {order.paymentStatus}</h7>
+                            <h7>Phương thức thanh toán: {JSON.stringify(orderInfo) === "1" ? "Tiền mặt" : "Chuyển khoản"}</h7>
+                            <label>Tiếp thị: -0 VND</label>
+                            <label>Tổng cộng: {JSON.stringify(orderInfo[0].total_price)}</label>
                         </div>
                     </div>
 
                     <div className={styles.content2}>
                         <h3>Ghi chú</h3>
-                        <p>{order.notes}</p>
+                        <p>Không có ghi chú</p>
                     </div>
 
                     <div className={styles.content3}>
                         <h3>Khách hàng: </h3>
-                        <p>{order.customer}</p>
-                        <p>1 đơn hàng</p>
+                        <p>{JSON.stringify(orderInfo[0].customer_name)}</p>
+                        <p>Số đơn: {num}</p>
                         <hr />
 
                         <h4>Liên hệ</h4>
-                        <p>{order.phone}</p>
-                        <p>{order.email}</p>
+                        <p>{JSON.stringify(orderInfo[0].customer_phone)}</p>
                         <hr />
 
-                        <h4>Địa chỉ</h4>
-                        <p>{order.address}</p>
                     </div>
                 </div>
             </form>
