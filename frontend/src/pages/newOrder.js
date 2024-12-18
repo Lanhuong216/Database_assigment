@@ -29,14 +29,14 @@ const NewOrder = () => {
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
-                            <td>Đang giao</td>
+                            <td>-</td>
                             <td><input type="radio"></input></td>
                         </tr>
                         <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
-                            <td>203.000 VND</td>
+                            <td>-</td>
                             <td><input type="radio"></input></td>
                         </tr>
                     </tbody>

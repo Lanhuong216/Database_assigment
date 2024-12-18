@@ -23,6 +23,7 @@ import AddSupply from "./pages/addSupply";
 import Productinfo from "./pages/Productinfo";
 import Listsupplier from "./pages/listsupplier";
 import Employee from "./pages/Employee";
+import NewOrderInfo from "./pages/newOrderInfo";
 function App() {
   return (
     <>
@@ -42,7 +43,7 @@ function App() {
           <Route path="/listmarketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
-          <Route path='/neworder/:order_id' element={<OrderInfo />} />
+          <Route path='/neworder/:order_id' element={<NewOrderInfo />} />
           <Route path='/defectiveorder' element={<Defective />} />
           <Route path='/issueorder' element={<Issueorder />} />
           <Route path='/listproduct' element={<Productinfo />} />

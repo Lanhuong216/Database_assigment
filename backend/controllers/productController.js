@@ -61,5 +61,20 @@ JOIN
         res.status(500).send('Server Error');
     }
 }
-
-module.exports = { getSupplier, getProduct, getInventory };
+const getProductId = async (req, res) => {
+    const id = String(req.params.id)
+    try {
+        connection.connect(function (err) {
+            if (err) throw err;
+            connection.query(`SELECT * FROM Product WHERE product_id=?`, [id], function (err, result) {
+                if (err) throw err;
+                console.log(result);
+                res.send(result)
+            });
+        });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+}
+module.exports = { getSupplier, getProduct, getInventory, getProductId };

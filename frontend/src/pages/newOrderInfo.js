@@ -3,25 +3,29 @@ import styles from '../styles/orderInfo.module.scss';
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import orderApi from "../api/orderApi";
+import productApi from "../api/productApi";
 function OrderInfo() {
     const { order_id } = useParams();
     const navigate = useNavigate();
-    const [orderInfo, setOrderInfo] = useState([])
+    const productId = ['00000001', '00000002']
+    const [productList, setProductList] = useState([])
     useEffect(() => {
-        const fetchOrdInfo = async () => {
-            const emp = await orderApi.getSpecificOrder(order_id);
-            setOrderInfo(emp)
-            console.log(emp)
-        }
-        fetchOrdInfo();
-    }, [])
-    let num = 0;
+        productId.forEach(element => {
+            productId.forEach(element => {
+                const fetchProduct = async () => {
+                    const emp = await productApi.getProduct(element);
+                    setProductList(emp)
+                }
+                fetchProduct();
+            }, [])
+        });
+
+    });
     return (
         <>
             <Navbar />
-            <div className={styles.title}>Đơn hàng {order_id}</div>
-            <div className={styles.btn} onClick={() => navigate(`/listorder`)}>Quay lại </div>
+            {/* <div className={styles.title}>Đơn hàng {order_id}</div>
+            <div className={styles.btn} onClick={() => navigate(`/listorder`)}>Nhận đơn</div>
             <button className={styles.delete_button}>In đơn hàng</button>
             <form>
                 <div className={styles.content}>
@@ -40,7 +44,7 @@ function OrderInfo() {
                                         <label>ID Sản phẩm: {data.product_id}</label>
                                     </div>
                                     <div className={styles.centerdetail}>
-                                        <label>Giá : {data.total_price}</label>
+                                        <label>Giá : {data.product_price}</label>
 
                                     </div>
                                     {(arr[index + 1]) == undefined ?
@@ -78,7 +82,7 @@ function OrderInfo() {
                         )
                     })}
                 </div>
-            </form>
+            </form> */}
         </>
     );
 }
