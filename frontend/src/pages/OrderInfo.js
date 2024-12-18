@@ -30,7 +30,7 @@ function OrderInfo() {
                     </div>
                     <hr />
                     <div className={styles.detail}>
-                        <h3>{order_id}</h3>
+                        <h3 className={styles.orderID}>{order_id}</h3>
                         {orderInfo.map((data, index, arr) => {
                             num++;
                             return (
@@ -40,14 +40,14 @@ function OrderInfo() {
                                         <label>ID Sản phẩm: {data.product_id}</label>
                                     </div>
                                     <div className={styles.centerdetail}>
-                                        <label>Giá : {data.total_price}</label>
+                                        <label>Giá : {parseInt(data.total_price)} VND</label>
 
                                     </div>
                                     {(arr[index + 1]) == undefined ?
                                         <div className={styles.statusOrd}>
                                             <h7>Phương thức thanh toán: {(data.order_payment) === "1" ? "Tiền mặt" : "Chuyển khoản"}</h7>
                                             <label>Tiếp thị: -0 VND</label>
-                                            <label>Tổng cộng: {(data.total_price)}</label>
+                                            <label>Tổng cộng: {parseInt(data.total_price)} VND</label>
                                         </div> : <></>}
                                 </>
                             )
@@ -64,12 +64,12 @@ function OrderInfo() {
                                 {(index === 0) ?
                                     <div className={styles.content3}>
                                         <h3>Khách hàng: </h3>
-                                        <p>{JSON.stringify(data.customer_name)}</p>
+                                        <p>{(data.customer_name)}</p>
                                         <p>Số đơn: {num}</p>
                                         <hr />
 
                                         <h4>Liên hệ</h4>
-                                        <p>{JSON.stringify(data.customer_phone)}</p>
+                                        <p>{(data.customer_phone)}</p>
                                         <hr />
 
                                     </div>

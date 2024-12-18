@@ -41,7 +41,7 @@ const Customers = () => {
                     <td>{data.customer_id}</td>
                     <td>{data.name}</td>
                     <td>{data.phone_number}</td>
-                    <td>{data.purchase_history === null ? 0 : data.purchase_history}</td>
+                    <td className={styles.numOrder}>{data.purchase_history === null ? 1 : data.purchase_history}</td>
                   </tr>
                 )
               })}
