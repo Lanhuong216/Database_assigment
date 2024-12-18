@@ -30,6 +30,7 @@ const Listsupplier = () => {
                         <th>Số điện thoại</th>
                         <th>Email</th>
                         <th>Trạng thái</th>
+                        <th>Cập nhật</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,7 @@ const Listsupplier = () => {
                                 <td>{data.phone_number}</td>
                                 <td>{data.email}</td>
                                 <td>{data.name === '1' ? "Còn hợp đồng" : "Hết hạn"}</td>
+                                <td className={styles.btnConfirmUpdate}></td>
                             </tr>
                         )
 

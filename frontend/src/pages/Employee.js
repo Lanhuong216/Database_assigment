@@ -27,6 +27,7 @@ const Employee = () => {
                         <th>Điện thoại</th>
                         <th>Trạng thái</th>
                         <th>Chức vụ</th>
+                        <th>Cập nhật</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@ const Employee = () => {
                                     <td>{data.phone_number}</td>
                                     <td>{data.status === '1' ? "Đang làm việc" : "Đã nghỉ"}</td>
                                     <td>{data.EmployeeType}</td>
+                                    <td className={styles.btnConfirmUpdate}></td>
                                 </tr>
 
                             </>

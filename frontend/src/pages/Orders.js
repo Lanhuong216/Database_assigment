@@ -42,7 +42,7 @@ const Orders = () => {
                 <td>{data.create_date}</td>
                 <td>{data.name}</td>
                 <td>{data.status === "error" ? <div style={{ color: 'red', fontWeight: 'bold' }}>{data.status}</div> : data.status}</td>
-                <td>{data.total_price}</td>
+                <td>{parseInt(data.total_price)} VND</td>
               </tr>
             )
           })}

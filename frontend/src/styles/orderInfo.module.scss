@@ -11,7 +11,24 @@ $hover-color: #60443a;
     left: 20%;
     padding: 20px;
 }
+.orderID{
+    font-size: 25px;
+    font-weight: bold;
 
+}
+.leftdetail{
+    margin-left: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.statusOrd{
+    font-weight: bold;
+    font-size: 25px;
+    color: #60443a;
+    label {
+        margin-left: 70%;
+    }
+}
 .delete_button {
     background-color: #fff;
     padding: 5px 10px;
@@ -62,10 +79,10 @@ $hover-color: #60443a;
     }
     .centerdetail {
         margin-top: -40px;
-        margin-left: 30%;
+        margin-left: 70%;
     }
     .detail {
-        margin-left: 175px;
+        // margin-left: 175px;
         font-size: 14px;
         line-height: 1.6;
     }

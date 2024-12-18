@@ -29,15 +29,15 @@ const NewOrder = () => {
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
-                            <td>-</td>
-                            <td><input type="radio"></input></td>
+                            <td>100000 VND</td>
+                            <td><button className={styles.btnConfirmOrder}></button></td>
                         </tr>
                         <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
-                            <td>-</td>
-                            <td><input type="radio"></input></td>
+                            <td>300000 VND</td>
+                            <td><button className={styles.btnConfirmOrder}></button></td>
                         </tr>
                     </tbody>
                 </table>

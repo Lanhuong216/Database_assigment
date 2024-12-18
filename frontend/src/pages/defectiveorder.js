@@ -23,6 +23,7 @@ const Defective = () => {
                         <th> Ngày đặt</th>
                         <th>Khách hàng</th>
                         <th> Tổng tiền</th>
+                        <th> Lý do lỗi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +34,8 @@ const Defective = () => {
                                     <td>{data.order_id}</td>
                                     <td>{data.create_date}</td>
                                     <td>{data.name}</td>
-                                    <td>{data.total_price}</td>
+                                    <td>{parseInt(data.total_price)} VND</td>
+                                    <td>Chưa xác định</td>
                                 </tr>
                             </>
                         )

@@ -31,6 +31,7 @@ const Inventory = () => {
                 <th>Trạng thái</th>
                 <th>Số lượng tồn</th>
                 <th>Cập nhật số lượng</th>
+                <th>Cập nhật</th>
               </tr>
             </thead>
             <tbody>
@@ -44,9 +45,10 @@ const Inventory = () => {
                     <td >
                       <form>
                         <input type="text" id="quantity"></input>
-                        <button className={styles.add}>Thêm</button>
                       </form>
-
+                    </td>
+                    <td>
+                    <button className={styles.btnConfirmUpdate}></button>
                     </td>
                   </tr>
 
