@@ -134,7 +134,7 @@ function EditMarketingInfo() {
                         <input type="time" id="endtime_discount"></input>
                     </div>
                 </div>
-                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listcus`)}></input>
+                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listmarketing`)}></input>
                 <button className={styles.back_button} onClick={() => navigate(`/listmarketing/${marketingId}`)}>Quay lại</button>
             </form>
         </>

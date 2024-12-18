@@ -7,6 +7,8 @@ import EditMarketingInfo from "./pages/editmarketingInfo";
 import AddNewMarketing from "./pages/addnewMarketing";
 import MarketingInfo from "./pages/marketingInfo";
 import React from 'react';
+import EditAddProduct from "./pages/editAddProduct";
+import EditSuply from "./pages/editSupply";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Orders from './pages/Orders';
 import Customers from './pages/Customers';
@@ -21,6 +23,7 @@ import AddSupply from "./pages/addSupply";
 import Productinfo from "./pages/Productinfo";
 import Listsupplier from "./pages/listsupplier";
 import Employee from "./pages/Employee";
+import OrderAllInfo from "./pages/InforAllorder";
 function App() {
   return (
     <>
@@ -33,18 +36,20 @@ function App() {
           <Route path='/listmarketing/edit/:marketingId' element={<EditMarketingInfo />} />
           <Route path='/listmarketing/addmar' element={<AddNewMarketing />} />
           <Route path='/listmarketing/:marketingId' element={<MarketingInfo />} />
-          <Route path="/listorder" element={<Orders />} />
-          <Route path="/listorder/:order_id" element={<OrderInfo />} />
+          <Route path='/listorder' element={<Orders />} />
+          <Route path='/listorder/:order_id' element={<OrderAllInfo />} />
           <Route path="/listcus" element={<Customers />} />
           <Route path="/listcus/add" element={<AddNewCus />} />
-          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/listmarketing" element={<Marketing />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path='/neworder' element={<NewOrder />} />
           <Route path='/neworder/:order_id' element={<OrderInfo />} />
           <Route path='/defectiveorder' element={<Defective />} />
           <Route path='/issueorder' element={<Issueorder />} />
           <Route path='/listproduct' element={<Productinfo />} />
+          <Route path='/listproduct/edit' element={<EditAddProduct />} />
           <Route path='/supplier' element={<Listsupplier />} />
+          <Route path='/supplier/edit' element={<EditSuply />} />
           <Route path='/supplier/add' element={<AddSupply />} />
           <Route path='/listproduct/newproduct' element={<AddPoduct />} />
           <Route path='/listemp' element={<Employee />} />

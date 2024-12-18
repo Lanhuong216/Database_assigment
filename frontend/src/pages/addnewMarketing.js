@@ -168,6 +168,7 @@ function AddNewMarketing() {
                     </div>
 
                 </div>
+                <input type="submit" value="Lưu" className={styles.save_button} onClick={() => navigate(`/listmarketing`)}></input>
                 <input type="submit" value="Lưu" className={styles.save_button} /* onClick={() => navigate(`/listcus`) }*/></input>
             </form>
         </>
