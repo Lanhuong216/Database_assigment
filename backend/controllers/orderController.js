@@ -61,8 +61,8 @@ const getSpecificOrder = async (req, res) => {
             connection.query(`SELECT 
     ob.order_id, 
     pb.color AS product_color, 
-    pb.sum_price / pb.quantity AS product_price, 
     pb.quantity AS product_quantity, 
+    p.sell_price_per_product AS product_price,
     pb.size AS product_size,
     pb.product_id, 
     ob.total_price, 
@@ -82,6 +82,10 @@ JOIN
     Customer c
 ON 
     ob.customer_id = c.customer_id
+JOIN
+	Product p
+ON
+    p.product_id=pb.product_id
 WHERE 
     ob.order_id = ?;`, [id], function (err, result) {
                 if (err) throw err;

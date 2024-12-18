@@ -37,7 +37,7 @@ const Orders = () => {
         <tbody>
           {orderList.map((data) => {
             return (
-              <tr onClick={() => handleRowClick(data.status, data.customer_id)}>
+              <tr onClick={() => handleRowClick(data.status, data.order_id)}>
                 <td>{data.order_id}</td>
                 <td>{data.create_date}</td>
                 <td>{data.name}</td>
