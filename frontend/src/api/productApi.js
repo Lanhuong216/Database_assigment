@@ -11,6 +11,10 @@ const productApi = {
     getInventory() {
         const url = '/api/product/inventory';
         return axiosClient.get(url)
+    },
+    getProduct(element) {
+        const url = `/api/product/${element}`;
+        return axiosClient.get(url)
     }
 }
 
