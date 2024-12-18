@@ -11,6 +11,8 @@ const NewOrder = () => {
     return (
         <>
             <Navbar />
+            <h1 className={styles.headTitle}>Cô hồn Shop</h1>
+            <h1 className={styles.header}>Đơn hàng</h1>
             <h2 className={styles.title}>Danh sách đơn hàng</h2>
             <form>
                 <table className={styles.table}>
@@ -21,6 +23,7 @@ const NewOrder = () => {
                             <th> Ngày đặt</th>
                             <th>Khách hàng</th>
                             <th> Tổng tiền</th>
+                            <th> Trạng thái</th>
                             <th>Nhận đơn</th>
                         </tr>
                     </thead>
@@ -29,15 +32,17 @@ const NewOrder = () => {
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
-                            <td>Đang giao</td>
-                            <td><input type="radio"></input></td>
+                            <td>1950.00 VND</td>
+                            <td>Chờ xác nhận</td>
+                            <td><buttom className={styles.btnConfirmOrder}></buttom></td>
                         </tr>
                         <tr onClick={() => handleRowClick('12345')} className={styles.clickableRow}>
                             <td>12345</td>
                             <td>23/11/2023</td>
                             <td>Nguyễn Văn A</td>
                             <td>203.000 VND</td>
-                            <td><input type="radio"></input></td>
+                            <td>Chờ xác nhận</td>
+                            <td><buttom className={styles.btnConfirmOrder}></buttom></td>
                         </tr>
                     </tbody>
                 </table>

@@ -15,10 +15,11 @@ const Issueorder = () => {
     return (
         <>
             <Navbar />
+            <h1 className={styles.headTitle}>Cô hồn Shop</h1>
+            <h1 className={styles.header}>Đơn hàng</h1>
             <h2 className={styles.title}>Danh sách đơn hàng</h2>
             <table className={styles.table}>
                 <thead>
-
                     <tr>
                         <th>Mã đơn hàng</th>
                         <th> Ngày xuất kho</th>

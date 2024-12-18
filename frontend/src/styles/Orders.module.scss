@@ -1,7 +1,43 @@
+.headTitle{
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    font-family: "Josefin Sans";
+    color: #60443a;
+}
+.header{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    font-family: "Josefin Sans";
+    color: #60443a;
+}
+.downloadButton {
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  
+    &:hover {
+      background-color: #a67969;
+      color: #fff;
+    }
+  }
+  
+.icon {
+    margin-right: 8px;
+}
 .title {
     position: absolute;
     left: 20%;
-    top: 30%;
+    top: 25%;
     font-family: "Josefin Sans";
     color: #60443a;
 }
@@ -9,7 +45,7 @@
 .table {
     position: absolute;
     left: 20%;
-    top: 40%;
+    top: 30%;
     border-collapse: collapse;
     width: 70%;
     padding: 5px 10px;
@@ -43,4 +79,81 @@
     input {
         text-align: center;
     }
+}
+.btnConfirmOrder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-top: 0;
+    position: relative;
+    font-family: "Josefin Sans", sans-serif;
+    width: 120px;
+    height: 40px;
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btnConfirmOrder::before {
+    content: "Nhận đơn"; 
+    font-size: 16px; 
+    color: inherit; 
+    text-align: center; 
+    display: block; 
+    width: 100%; 
+}
+.btnConfirmOrder:hover {
+    background-color: #a67969;
+    color: #fff;
+}
+
+.search-box {
+    left: 20%;
+    top: 10%;
+    border: 1px solid #b46d4d;
+    input {
+        border: none;
+        flex-grow: 1;
+        padding: 5px;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        color: #000;
+
+        &::placeholder {
+        color: #e0bda4;
+        }   
+    }
+}
+.search-icon {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #b46d4d; 
+}
+.dropdown {
+    top: 10px;
+    border: 1px solid #b46d4d;
+    button {
+        background: #60443a;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+.order_container{
+    display: flex;
+
+}
+.testdiv{
+   display: flex;
+    flex-direction: column;
+}
+.content{
+
 }

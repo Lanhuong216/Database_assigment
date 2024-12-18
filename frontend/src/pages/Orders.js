@@ -15,8 +15,25 @@ const Orders = () => {
   }, [])
   let navigate = useNavigate();
   return (
-    <>
+  
+    <div className='order_container'>
+  
       <Navbar />
+
+ 
+            <div className='content'>
+      <h1 className={styles.headTitle}>Cô hồn Shop</h1>
+      <h1 className={styles.header}>Đơn hàng</h1>
+      <div className={styles.testdiv}>
+      <div className="">
+        <button class="dropdown">Sản phẩm▼</button>
+        <button class="dropdown">Khách hàng▼</button>
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Tìm kiếm đơn hàng" />
+      </div>
+      
+
+      <div>
       <h2 className={styles.title}>Danh sách đơn hàng</h2>
       <table className={styles.table}>
         <thead>
@@ -42,7 +59,12 @@ const Orders = () => {
           })}
         </tbody>
       </table>
-    </>
+      </div>
+      </div>
+      </div>
+
+    </div>
+
   );
 };
 

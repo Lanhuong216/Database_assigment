@@ -1,7 +1,21 @@
+.headTitle{
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    font-family: "Josefin Sans";
+    color: #60443a;
+}
+.header{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    font-family: "Josefin Sans";
+    color: #60443a;
+}
 .title {
     position: absolute;
     left: 20%;
-    top: 30%;
+    top: 25%;
     font-family: "Josefin Sans";
     color: #60443a;
 }
@@ -9,7 +23,7 @@
 .table {
     position: absolute;
     left: 20%;
-    top: 40%;
+    top: 30%;
     border-collapse: collapse;
     width: 70%;
     padding: 5px 10px;
@@ -42,4 +56,33 @@
     input {
         text-align: center;
     }
+}
+.btnConfirmDefectiveOrder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-top: 0;
+    position: relative;
+    font-family: "Josefin Sans", sans-serif;
+    width: 120px;
+    height: 40px;
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btnConfirmDefectiveOrder::before {
+    content: "Xử lý"; 
+    font-size: 16px; 
+    color: inherit; 
+    text-align: center; 
+    display: block; 
+    width: 100%; 
+}
+.btnConfirmDefectiveOrder:hover {
+    background-color: #a67969;
+    color: #fff;
 }

@@ -15,6 +15,8 @@ const Defective = () => {
     return (
         <>
             <Navbar />
+            <h1 className={styles.headTitle}>Cô hồn  Shop</h1>
+            <h1 className={styles.header}>Đơn hàng</h1>
             <h2 className={styles.title}>Danh sách đơn hàng</h2>
             <table className={styles.table}>
                 <thead>
@@ -23,6 +25,8 @@ const Defective = () => {
                         <th> Ngày đặt</th>
                         <th>Khách hàng</th>
                         <th> Tổng tiền</th>
+                        <th> Lý do lỗi</th>
+                        <th>Xử lý</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +38,8 @@ const Defective = () => {
                                     <td>{data.create_date}</td>
                                     <td>{data.name}</td>
                                     <td>{data.total_price}</td>
+                                    <td>{data.name}</td>
+                                    <td><buttom className={styles.btnConfirmDefectiveOrder}></buttom></td>
                                 </tr>
                             </>
                         )

@@ -6,8 +6,8 @@ function Navbar() {
     let navigate = useNavigate();
     const shop_id = 20;
     return (
-        <>
-            <Header />
+      
+          
             <div className={styles.navbar}>
 
                 <ul className={styles.navbar_menu}>
@@ -43,7 +43,7 @@ function Navbar() {
 
                 </ul>
             </div>
-        </>
+
 
     );
 };
