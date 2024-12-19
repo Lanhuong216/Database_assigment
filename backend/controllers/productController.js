@@ -52,7 +52,6 @@ JOIN
     Product F ON E.product_id= F.product_id;
 `, function (err, result) {
                 if (err) throw err;
-                console.log(result);
                 res.send(result)
             });
         });
@@ -63,13 +62,11 @@ JOIN
 }
 const getProductId = async (req, res) => {
     const id = String(req.params.id)
-    console.log(id)
     try {
         connection.connect(function (err) {
             if (err) throw err;
             connection.query(`SELECT * FROM Product WHERE product_id=?`, [id], function (err, result) {
                 if (err) throw err;
-                console.log(result);
                 res.send(result)
             });
         });

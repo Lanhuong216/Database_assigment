@@ -26,14 +26,8 @@ const NewOrder = () => {
                     <tbody>
                         <tr onClick={() => handleRowClick('1')} className={styles.clickableRow}>
                             <td>23/11/2023</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>100000 VND</td>
-                            <td><button className={styles.btnConfirmOrder}></button></td>
-                        </tr>
-                        <tr onClick={() => handleRowClick('2')} className={styles.clickableRow}>
-                            <td>23/11/2023</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>300000 VND</td>
+                            <td>Nguyễn Văn Thái</td>
+                            <td>-</td>
                             <td><button className={styles.btnConfirmOrder}></button></td>
                         </tr>
                     </tbody>

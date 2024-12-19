@@ -51,7 +51,6 @@ function NewOrderInfo() {
             const response = await orderApi.post(formData); // Replace with your API endpoint
             alert("Dữ liệu đã được lưu thành công!");
             navigate("/listorder");
-            alert("Nhận đơn thành công")
         } catch (error) {
             console.error("Error:", error);
             alert("Đã xảy ra lỗi khi lưu dữ liệu!");

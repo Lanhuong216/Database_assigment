@@ -1,4 +1,5 @@
 require('dotenv').config();
+var bodyParser = require('body-parser');
 
 const express = require('express');
 const app = express();
@@ -11,8 +12,9 @@ var cors = require('cors');
 const PORT = 3000;
 
 app.use(cors());
-app.use(express.json()) //for json
-app.use(express.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true })); // Returns middleware that only parses urlencoded bodies. This parser accepts only UTF-8 encoding of the body and supports automatic inflation of gzip and deflate encodings.
+
+app.use(bodyParser.json());
 
 app.use('/api/employee', empRouter)
 app.use('/api/order', orderRouter)
